@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+
+}
+
+:root{
+    
+/* Primary */
+--Moderate-violet: hsl(263, 55%, 52%);
+--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+--White : hsl(0, 0%, 100%);
+
+/* Neutral */
+--Light-gray: hsl(0, 0%, 81%);
+--Light-grayish-blue: hsl(210, 46%, 95%);
+
+/* 1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+
+}
+h1{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--Light-grayish-blue);
+}
+
+p{
+    line-height: 1.6;
+    color: var(--Light-grayish-blue);
+    opacity: .7;
+}
+
+
+/* styling the body */
+body{
+    height: 100vh;
+    background: var(--Light-gray);
+}
+
+/* styling the container */
+.container{
+    max-width: 1320px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* styling the main */
+.main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 3rem;
+    grid-auto-flow: dense;
+}
+
+/* styling the card */
+.card{
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* styling the image and name of each card */
+.personal-info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.personal-info img{
+    border-radius: 50%;
+    margin-right: 1rem;
+    border: 1px solid var(--White);
+}
+
+.personal-info h4{
+    color: var(--Light-grayish-blue);
+    font-size: 1rem;
+}
+.personal-info > p{
+    color: var(--Light-grayish-blue);
+    opacity: .5;
+}
+
+
+/* giving each card its background-color and position */
+.daniel{
+    grid-area: 1/1/2/3;
+    background: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 10%;
+    background-color: var(--Moderate-violet);
+}
+.jonathan{
+    grid-area:1/3/2/4 ;
+    background-color: var(--Very-dark-grayish-blue);
+} 
+.janette{
+    grid-area: 2/1/3/2;
+    background-color: var(--White);
+}
+.patrick{
+    grid-area: 2/2/3/4;
+    background-color: var(--Very-dark-blackish-blue);
+} 
+
+.kira{
+    grid-area: 1/4/3/5;
+    background-color: white;
+} 
+
+
+/* changing the font color of the white cards */
+.janette h1,
+.kira h1{
+    color: var(--Very-dark-blackish-blue);
+}
+.janette p,
+.kira p{
+    color: var(--Very-dark-grayish-blue);
+}
+
+.janette .name_and_function>h4,
+.kira .name_and_function >h4{
+    color: var(--Very-dark-grayish-blue);
+
+}
+.janette .name_and_function>p,
+.kira .name_and_function >p{
+    color: var(--Very-dark-grayish-blue);
+    opacity: .5;
+}
+
+
+/* stylinng the attribution */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+    text-decoration: none;
+}
+
+
+/* changing cards position */
+@media screen and (max-width:1200px){
+    .kira{
+        grid-area: 3/1/5/4;
+    }
+}
+
+
+@media screen and (max-width:900px){
+    .daniel{
+        grid-area: 1/1/2/5;
+    }
+    .jonathan{
+        grid-area: 2/2/3/5;
+    }
+    .janette{
+        grid-area: 2/1/3/2;
+    }
+    .patrick{
+        grid-area:3/1/4/5 ;
+    }
+    .kira{
+        grid-area: 4/1/4/5;
+    }
+}
+
+/* changing the display from grid to flex with column direction */
+@media screen and (max-width:680px){
+    .container{
+        padding: 1.5rem; 
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+    
+    .card{
+        max-width: 100%;
+    }
+    
+    .daniel{
+        background-position: 90% 0;
+    }
+}
