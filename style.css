@@ -40,12 +40,12 @@ p{
 /* styling the body */
 body{
     height: 100vh;
-    background: var(--Light-gray);
+    background: var(--Light-grayish-blue);
 }
 
 /* styling the container */
 .container{
-    max-width: 1320px;
+    max-width: 1200px;
     min-height: 100%;
     margin: 0 auto;
     padding: 3rem;
